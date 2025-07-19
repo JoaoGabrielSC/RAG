@@ -4,6 +4,8 @@ This project provides a complete pipeline for extracting text from various docum
 
 ## Overview
 
+<img width="1306" height="170" alt="image" src="https://github.com/user-attachments/assets/a6a08df2-2b47-426d-ad00-a9132d4282b8" />
+
 ### 🔁 Pipeline Steps (see diagram)
 
 1. **Start** – Begin the document ingestion process.
