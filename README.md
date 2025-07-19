@@ -1,4 +1,4 @@
-# RAG - Retrieval Augmented Generation
+# RAG - Retrieval Augmented Generation With Vector DB
 
 This project provides a complete pipeline for extracting text from various document formats (PDF, Word, Images), chunking it, generating embeddings, and storing them in a Vector Database. It is designed to support document-based Retrieval-Augmented Generation (RAG) systems.
 
@@ -47,7 +47,7 @@ This project provides a complete pipeline for extracting text from various docum
 
 ```bash
 # Clone the repo
-git clone git@github.com:JoaoGabrielSC/RAG.git
+git clone git@github.com:JoaoGabrielSC/rag-vectordb.git
 cd RAG
 
 # (Optional) Create a virtual environment (using pyenv)
