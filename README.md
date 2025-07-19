@@ -34,42 +34,60 @@ This project provides a complete pipeline for extracting text from various docum
 
 ## Project Structure
 
-    .
-    ├── docker-compose.yaml
-    ├── Dockerfile
-    ├── examples
-    │   ├── image.png
-    │   └── volume_tracing.pdf
-    ├── LICENSE
-    ├── main.py
-    ├── Makefile
-    ├── mypy.ini
-    ├── README.md
-    ├── requirements.txt
-    └── src
-        ├── database
-        │   ├── dto
-        │   │   ├── __init__.py
-        │   │   ├── base_dto.py
-        │   │   └── embedding_dto.py
-        │   └── models
-        │       ├── __init__.py
-        │       ├── base.py
-        │       └── embedding.py
-        ├── entities
-        │   └── embedding.py
-        ├── repositories
-        │   ├── __init__.py
-        │   ├── base_repository.py
-        │   └── pgvector_repository.py
-        ├── services
-        │   └── text_extractor
-        │       ├── __init__.py
-        │       ├── image_text_extractor.py
-        │       └── pdf_text_extractor.py
-        └── utils
-            ├── __init__.py
-            └── parser.py
+      .
+      ├── docker-compose.yaml
+      ├── Dockerfile
+      ├── examples
+      │   ├── image.png
+      │   └── volume_tracing.pdf
+      ├── LICENSE
+      ├── main.py
+      ├── Makefile
+      ├── mypy.ini
+      ├── README.md
+      ├── requirements.txt
+      └── src
+          ├── config
+          │   └── __init__.py
+          ├── database
+          │   ├── __init__.py
+          │   ├── dto
+          │   │   ├── __init__.py
+          │   │   ├── base_dto.py
+          │   │   └── embedding_dto.py
+          │   └── models
+          │       ├── __init__.py
+          │       ├── base.py
+          │       └── embedding.py
+          ├── entities
+          │   └── embedding.py
+          ├── machine_learning_models
+          │   ├── __init__.py
+          │   ├── factory
+          │   │   └── __init__.py
+          │   └── strategies
+          │       ├── __init__.py
+          │       ├── embedding_strategy.py
+          │       ├── hugging_face_strategy.py
+          │       └── torch_vision_strategy.py
+          ├── repositories
+          │   ├── __init__.py
+          │   ├── base_repository.py
+          │   ├── base_unit_of_work.py
+          │   ├── embedding_repository.py
+          │   └── unit_of_work.py
+          ├── services
+          │   ├── embedding_service
+          │   │   └── embedding_service.py
+          │   ├── preprocessing
+          │   │   └── image.py
+          │   └── text_extractor
+          │       ├── __init__.py
+          │       ├── image_text_extractor.py
+          │       └── pdf_text_extractor.py
+          └── utils
+              ├── __init__.py
+              └── parser.py
 
 ## Installation
 
