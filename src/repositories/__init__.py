@@ -1,2 +1,2 @@
 from .base_repository import BaseRepository
-from .pgvector_repository import PgVectorRepository
+from .embedding_repository import PgVectorRepository

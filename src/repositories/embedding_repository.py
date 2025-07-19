@@ -11,9 +11,11 @@ class EmbeddingRepository(BaseRepository):
 
     def get_by_id(self, id: int) -> EmbeddingDTO | None:
         embedding = self.session.query(self.model).filter_by(id=id).first()
-        if embedding:
-            return EmbeddingDTO.model_validate(embedding)
-        return None
+
+        if not embedding:
+            None
+
+        return EmbeddingDTO.model_validate(embedding)
 
     def create(self, data: EmbeddingDTO) -> EmbeddingDTO:
         db_model = Embedding(

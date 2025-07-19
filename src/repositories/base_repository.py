@@ -18,7 +18,7 @@ class BaseRepository(ABC, Generic[_T]):
         raise NotImplementedError()
 
     @abstractmethod
-    def find_by_id(self, id_: int) -> _T | None:
+    def get_by_id(self, id_: int) -> _T | None:
         raise NotImplementedError()
 
     @abstractmethod

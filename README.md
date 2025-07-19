@@ -2,6 +2,13 @@
 
 This project provides a complete pipeline for extracting text from various document formats (PDF, Word, Images), chunking it, generating embeddings, and storing them in a Vector Database. It is designed to support document-based Retrieval-Augmented Generation (RAG) systems.
 
+## TODO
+
+- [] Implement Services and Repositories to handle database operations (CRUD, queries, etc.)
+- [] Add ML Embedding Model to transform raw data into vector embeddings
+- [] Add support for multiprocessing or multithreading to concurrently load and process chunked data (ETL load step)
+- [] Create the Retrieval API for querying and retrieving vectorized data
+
 ## Overview
 
 <img width="1306" height="170" alt="image" src="https://github.com/user-attachments/assets/a6a08df2-2b47-426d-ad00-a9132d4282b8" />
