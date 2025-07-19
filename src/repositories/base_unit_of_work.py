@@ -1,31 +1,21 @@
 from abc import ABC, abstractmethod
+from typing import TypeVar, Generic
+
+_T = TypeVar("_T")
 
 
-class UnitOfWork(ABC):
-    """
-    Abstract base class for Unit of Work pattern.
-    This class defines the interface for managing transactions and repositories.
-    It should be implemented by concrete classes that handle specific database operations.
-    """
+class AbstractUnitOfWork(ABC, Generic[_T]):
 
-    @property
-    @abstractmethod
-    def session(self):
-        """Returns the current session."""
-
-    @property
-    @abstractmethod
-    def repository(self):
-        """Returns the current repository."""
+    repository: _T
 
     @abstractmethod
     def begin(self):
-        """Initialize a transaction."""
+        raise NotImplementedError()
 
     @abstractmethod
     def commit(self):
-        """Confirm the transaction."""
+        raise NotImplementedError()
 
     @abstractmethod
     def rollback(self):
-        """Revert the transaction."""
+        raise NotImplementedError()
