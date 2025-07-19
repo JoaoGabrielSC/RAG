@@ -1,0 +1,58 @@
+# RAG - Retrieval Augmented Generation
+
+This project provides a complete pipeline for extracting text from various document formats (PDF, Word, Images), chunking it, generating embeddings, and storing them in a Vector Database. It is designed to support document-based Retrieval-Augmented Generation (RAG) systems.
+
+## Overview
+
+### 🔁 Pipeline Steps (see diagram)
+
+1. **Start** – Begin the document ingestion process.
+
+2. **Send Raw Documents** – Upload raw documents such as PDFs, Word docs, or images.
+
+3. **Text Extractor** – Extract text from different file types using specialized parsers:
+   - PDFs → `pdf_text_extractor.py`
+   - Images → `image_text_extractor.py` (OCR)
+
+4. **Splitter** – Break extracted text into smaller chunks using a customizable splitter strategy.
+
+5. **Parallel Chunk Processing** – Process chunks in parallel using threads.
+
+6. **Embedding Model** – Convert each chunk into an embedding vector using a pre-trained model.
+
+7. **Vector Database** – Store the resulting embeddings in a vector store for fast retrieval.
+
+## Project Structure
+
+    .
+    ├── docker-compose.yaml        # Optional: to set up services like vector DB
+    ├── Dockerfile                 # Build container for the pipeline
+    ├── main.py                    # Entry point of the pipeline
+    ├── Makefile                   # Useful commands for building and running
+    ├── requirements.txt           # Python dependencies
+    ├── examples/                  # Sample input documents
+    ├── src/
+    │   ├── repositories/          # (To be implemented: DB connectors, etc.)
+    │   ├── services/
+    │   │   └── text_extractor/
+    │   │       ├── image_text_extractor.py
+    │   │       ├── pdf_text_extractor.py
+    │   │       └── __init__.py
+    │   └── utils/
+    │       └── parser.py  
+
+## Installation
+
+```bash
+# Clone the repo
+git clone git@github.com:JoaoGabrielSC/RAG.git
+cd RAG
+
+# (Optional) Create a virtual environment (using pyenv)
+pyenv virtualenv 3.12.9 rag
+pyenv activate rag
+pyenv local rag
+
+# Install dependencies
+pip install -r requirements.txt
+```

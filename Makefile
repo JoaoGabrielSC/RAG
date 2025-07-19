@@ -2,13 +2,13 @@
 
 run:
 	@echo "Running Python"
-	@python main.py
+	@python main.py --dataset_path=$(dataset_path)
 
 install:
-	@echo "Installing package: $(package)"
-	@pip install $(package)
-	@if ! grep -i -q "^$(package)==`pip show $(package) | grep Version | awk '{print $$2}'`" requirements.txt 2>/dev/null; then \
-		echo "$(package)==`pip show $(package) | grep Version | awk '{print $$2}'`" >> requirements.txt; \
+	@echo "Installing package: $(pkg)"
+	@pip install $(pkg)
+	@if ! grep -i -q "^$(pkg)==`pip show $(pkg) | grep Version | awk '{print $$2}'`" requirements.txt 2>/dev/null; then \
+		echo "$(pkg)==`pip show $(pkg) | grep Version | awk '{print $$2}'`" >> requirements.txt; \
 		echo "Added to requirements.txt"; \
 	else \
 		echo "Package already in requirements.txt"; \
