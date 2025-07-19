@@ -27,21 +27,41 @@ This project provides a complete pipeline for extracting text from various docum
 ## Project Structure
 
     .
-    ├── docker-compose.yaml        # Optional: to set up services like vector DB
-    ├── Dockerfile                 # Build container for the pipeline
-    ├── main.py                    # Entry point of the pipeline
-    ├── Makefile                   # Useful commands for building and running
-    ├── requirements.txt           # Python dependencies
-    ├── examples/                  # Sample input documents
-    ├── src/
-    │   ├── repositories/          # (To be implemented: DB connectors, etc.)
-    │   ├── services/
-    │   │   └── text_extractor/
-    │   │       ├── image_text_extractor.py
-    │   │       ├── pdf_text_extractor.py
-    │   │       └── __init__.py
-    │   └── utils/
-    │       └── parser.py  
+    ├── docker-compose.yaml
+    ├── Dockerfile
+    ├── examples
+    │   ├── image.png
+    │   └── volume_tracing.pdf
+    ├── LICENSE
+    ├── main.py
+    ├── Makefile
+    ├── mypy.ini
+    ├── README.md
+    ├── requirements.txt
+    └── src
+        ├── database
+        │   ├── dto
+        │   │   ├── __init__.py
+        │   │   ├── base_dto.py
+        │   │   └── embedding_dto.py
+        │   └── models
+        │       ├── __init__.py
+        │       ├── base.py
+        │       └── embedding.py
+        ├── entities
+        │   └── embedding.py
+        ├── repositories
+        │   ├── __init__.py
+        │   ├── base_repository.py
+        │   └── pgvector_repository.py
+        ├── services
+        │   └── text_extractor
+        │       ├── __init__.py
+        │       ├── image_text_extractor.py
+        │       └── pdf_text_extractor.py
+        └── utils
+            ├── __init__.py
+            └── parser.py
 
 ## Installation
 
