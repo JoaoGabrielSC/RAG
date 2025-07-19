@@ -4,7 +4,7 @@ from src.database.dto import EmbeddingDTO
 from src.database.models.embedding import Embedding
 
 
-class PgVectorRepository(BaseRepository):
+class EmbeddingRepository(BaseRepository):
     def __init__(self, session: Session):
         self.session = session
         self.model = Embedding
