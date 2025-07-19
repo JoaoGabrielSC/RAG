@@ -1,14 +1,18 @@
-from src.text_extractor.pdf_text_extractor import PdfTextExtractor
+from src.services.text_extractor import ImageTextExtractor
+from src.utils import Parser
+from pathlib import Path
 
 
-def main():
-    file_path = "examples/volume_tracing.pdf"
-    extractor = PdfTextExtractor(file_path)
+def main(file_path: str) -> None:
+    image_extractor = ImageTextExtractor()
 
-    full_text = extractor.extract_text()
-
-    print(full_text)
+    text = image_extractor.extract_text(Path(file_path))
+    print(text)
 
 
 if __name__ == "__main__":
-    main()
+    parser = Parser()
+    parse = parser.parse()
+    print(parse.dataset_path)
+
+    main(parse.dataset_path)
