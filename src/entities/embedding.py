@@ -24,7 +24,7 @@ class EmbeddingEntity:
         return self.embedding is not None and len(self.embedding) > 0
 
     @classmethod
-    def from_dto(cls, dto: "EmbeddingDTO") -> "EmbeddingEntity":
+    def from_dto(cls, dto: EmbeddingDTO) -> "EmbeddingEntity":
         return cls(
             id=dto.id,
             text=dto.text,
@@ -33,7 +33,7 @@ class EmbeddingEntity:
             source_name=dto.source_name or "",
         )
 
-    def to_dto(self) -> "EmbeddingDTO":
+    def to_dto(self) -> EmbeddingDTO:
         return EmbeddingDTO(
             id=self.id,
             text=self.text,
